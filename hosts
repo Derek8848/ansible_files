@@ -1,5 +1,5 @@
 [control]
-macos ansible_connection=local
+kmac ansible_connection=local
 [vagrants]
 192.168.2.101 ansible_user=ansible
 192.168.2.102 ansible_user=ansible
