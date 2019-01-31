@@ -6,5 +6,5 @@
     homebrew:
      update_homebrew: yes
      upgrade_all: yes
-     name: dos2unix,git,htop,lftp,openvpn,unar,unrar,vim,wget,youtube-dl,p7zip
+     name: dos2unix,nmap,git,htop,lftp,openvpn,unar,unrar,vim,wget,youtube-dl,p7zip
      state: present
