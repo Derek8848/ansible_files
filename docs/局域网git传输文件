@@ -1,0 +1,11 @@
+Git 本身是去中心化的，Github 、Gitlib 等中心化平台只是为了方便多人合作而存在的。主机 A 使用 git init 命令创建的仓库可以被其他可以连接到 A 机器的 B、C 机器clone、push 的，即 「 git 仓库可以随时共享」。
+
+A 机器开启守护进程，使用 git 协议公开当前目录.下的仓库：
+git daemon --verbose --export-all --base-path=.
+
+B 机器克隆 A 机器的仓库：
+git clone git://$hostip_a/respostory_name
+
+其中 $hostip_a 为 A 机器的 IP， respostory_name 为  --base-path 指定目录下的仓库名称。
+
+通过这样的方式，即使没有 gitlib 、github 等平台，一样可以在局域网内团队共同协作任务，只要知道对方的 IP、和仓库名称即可。
