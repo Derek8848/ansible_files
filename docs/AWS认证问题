@@ -11,3 +11,43 @@ cloudtrail存储日志的位置
 -Data points with a period of 60 seconds (1 minute) are available for 15 days.
 -Data points with a period of 300 seconds (5 minute) are available for 63 days.
 -Data points with a period of 3600 seconds (1 hour) are available for 455 days (15 months).
+
+
+考到的内容：
+原题：On-Premise站点有Failover的MySQL数据库和DR站点，通过手工切换，如果切换到AWS实现自动无需管理的切换
+1.将Production 和 DR 部署到同一Region的不同AZ
+2.将Production 和 DR 部署到不同AZRegion
+3.将production部署到同一Region的不同AZ，无需DR
+
+有一套数据库服务器MySQL出现请求被丢弃，有很高的IO读写负载，如何定位问题？
+1. 把查询结果导入redis，查看数据库情况
+2. 创建replica，然后把应用连接到这两个实例
+
+有一套Kinesis data Stream导入EC2后发现处理速度很慢，每一个工作的stream IO吞吐量为10MB，问如何改善：
+1. 更改shard count 为更少
+2. 更改shard count 为更多
+
+把传统Message业务迁移到AWS最快的方法，MQ
+
+有个简单web业务，每天1000笔业务量，但是API的响应时间为50ms，使用了C4 large实例，请问解决性能问题和节省成本的方法是
+1. 用API gateway，用lambda代替web后段
+2. 用API gateway，用现有web服务器
+
+
+考到的知识点：
+S3和Cloudfront结合实现身份认证
+应用服务器和DB的用什么技术实现连接加密
+S3和Glacier
+EC2和ASG的Scale in的逻辑
+Elastic Beanstalk是否可以使用CPU利用率扩展
+Route53的负载均衡
+Dynamo DB DAX
+Dynamo DB 和 Elastic Cache存储session数据
+APP访问DB的短连接，如何保存Credentials ？ （System Manager？）
+cognito
+kinesis
+code pipline
+step funtion 和 SWF的区别
+snowball
+VPC
+API gateway
